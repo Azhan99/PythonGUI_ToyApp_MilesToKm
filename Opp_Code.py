@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 
 # Values
-screen_width = 300
-screen_height = 750
+SCREEN_WIDTH = 300
+SCREEN_HEIGHT = 750
 
 
 class Interface:
@@ -29,11 +29,17 @@ class Interface:
         self.pack()
 
     def convert(self):
+        ''''
+        This function converts miles to kms
+        ''''
         miles_input = self.entry_int.get()
         miles_input = miles_input*1.6
         self.output_string.set(str(int(miles_input))+' Km approx')
 
     def pack(self):
+        ''''
+        This function combines all packing from all widgets
+        ''''
         self.title.pack()
         self.frame.pack(pady=20)
         self.entry.pack(side='left')
@@ -42,4 +48,4 @@ class Interface:
         self.window.mainloop()
 
 
-App = Interface(screen_width, screen_height)
+App = Interface(SCREEN_WIDTH, SCREEN_HEIGHT)
